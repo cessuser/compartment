@@ -17,7 +17,7 @@ SESSION_CONFIGS = [
         'display_name': "compartment",
         'num_demo_participants': 1,
         'treatment': 1,
-        'app_sequence': ['Vignette'],
+        'app_sequence': ['number_add1', 'word_search', 'Vignette'],
     },
 ]
 
