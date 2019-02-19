@@ -1,0 +1,15 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+   Module 2
+{% endblock %}
+
+{% block content %}
+
+    {% include 'word_search/Introduction_instructions.html' %}
+
+
+    <input class="btn btn-primary btn-large btn-primary next-button" type="submit" value="Submit">
+
+{% endblock %}

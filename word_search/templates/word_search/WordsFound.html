@@ -1,0 +1,13 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+
+{% block content %}
+
+
+    {% formfield player.words_found with label="* How many valid words did you find? You will get 1 point for each word you indicate." %}
+
+    <input class="btn btn-primary btn-large btn-primary next-button" type="submit" value="Submit">
+
+{% endblock %}
+

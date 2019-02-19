@@ -1,0 +1,13 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Module 1: Introduction
+{% endblock %}
+
+{% block content %}
+<p>
+    In this Module, you will work on an Adding Numbers task.You will be asked to compute a series of additions in one minute. Your Earned Income depends on how many correct answers you provide. You will get 150 ECUs per correct answer.
+</p>
+ <div class="next-btn" style="text-align:right;">{% next_button %}</div>
+{% endblock%}
