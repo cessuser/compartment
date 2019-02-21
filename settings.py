@@ -13,12 +13,34 @@ SESSION_CONFIG_DEFAULTS = {
 
 SESSION_CONFIGS = [
     {
-        'name': 'compartment',
-        'display_name': "compartment",
+        'name': 'compartment_trt1',
+        'display_name': "compartment_trt1",
         'num_demo_participants': 1,
         'treatment': 1,
         'app_sequence': ['number_add1', 'word_search', 'Vignette'],
     },
+    {
+        'name': 'compartment_trt2',
+        'display_name': "compartment_trt2",
+        'num_demo_participants': 1,
+        'treatment': 2,
+        'app_sequence': ['number_add1', 'word_search', 'Vignette'],
+    },
+    {
+        'name': 'compartment_trt3',
+        'display_name': "compartment_trt3",
+        'num_demo_participants': 1,
+        'treatment': 3,
+        'app_sequence': ['number_add1', 'word_search', 'Vignette'],
+    },
+    {
+        'name': 'compartment_trt4',
+        'display_name': "compartment_trt4",
+        'num_demo_participants': 1,
+        'treatment': 4,
+        'app_sequence': ['number_add1', 'word_search', 'Vignette'],
+    },
+
 ]
 
 
@@ -30,7 +52,13 @@ LANGUAGE_CODE = 'en'
 REAL_WORLD_CURRENCY_CODE = 'USD'
 USE_POINTS = True
 
-ROOMS = []
+
+ROOMS = [
+    {
+        'name': 'test',
+        'display_name': 'test_US',
+    },
+]
 
 ADMIN_USERNAME = 'admin'
 # for security, best to set admin password in an environment variable
