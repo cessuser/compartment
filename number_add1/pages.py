@@ -6,8 +6,13 @@ import time
 
 
 class Introduction(Page):
+    form_model = models.Player
+    form_fields = ['url_assigned']
     def is_displayed(self):
         return self.round_number == 1
+
+
+
 
 
 class TaskPage(Page):
@@ -55,22 +60,12 @@ class Results(Page):
     def vars_for_template(self):
         self.group.set_payoff()
         self.player.n_correct = self.player.participant.vars['n_correct1_M5']
+        self.player.participant.vars['url'] = self.player.url_assigned
         return{
             'n_correct': self.player.participant.vars['n_correct1_M5']
         }
 
-
-class continueWaitPage(WaitPage):
-    wait_for_all_groups = True
-
-    def after_all_players_arrive(self):
-        pass
-
-    def is_displayed(self):
-        return self.round_number == 1
-
 page_sequence = [
-    continueWaitPage,
     Introduction,
     TaskPage,
     ResultWaitPage,

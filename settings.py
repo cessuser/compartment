@@ -40,6 +40,14 @@ SESSION_CONFIGS = [
         'treatment': 4,
         'app_sequence': ['number_add1', 'word_search', 'Vignette'],
     },
+    {
+        'name': 'Vignette',
+        'display_name': "Vignette",
+        'num_demo_participants': 1,
+        'treatment': 4,
+        'app_sequence': ['Vignette'],
+    },
+
 
 ]
 
@@ -56,7 +64,7 @@ USE_POINTS = True
 ROOMS = [
     {
         'name': 'test',
-        'display_name': 'test_US',
+        'display_name': 'test',
     },
 ]
 

@@ -44,6 +44,7 @@ class Group(BaseGroup):
             pair[0].payoff = pair[1] * Constants.prize
 
 class Player(BasePlayer):
+    url_assigned = models.StringField()
     answer = models.IntegerField() # player answer
     correct = models.IntegerField() # if correct
     n_correct = models.IntegerField() # number of correct
@@ -51,6 +52,7 @@ class Player(BasePlayer):
     roundPred = models.IntegerField(choices=[1, 2, 3], widget=widgets.RadioSelect)
 
     rank = models.IntegerField()
+
 
 
     def check_correct(self):
