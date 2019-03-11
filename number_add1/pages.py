@@ -65,7 +65,13 @@ class Results(Page):
             'n_correct': self.player.participant.vars['n_correct1_M5']
         }
 
+
+class Introduction0(Page):
+    def is_displayed(self):
+        return self.round_number == 1
+
 page_sequence = [
+    Introduction0,
     Introduction,
     TaskPage,
     ResultWaitPage,

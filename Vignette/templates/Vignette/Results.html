@@ -2,12 +2,15 @@
 {% load otree static %}
 
 {% block title %}
-    Page title
+    Result
 {% endblock %}
 
 {% block content %}
-
-    {% next_button %}
+<p>
+    Your payment in module 1: {{ p1 }} ECUs<br>
+    Your payment in module 2: {{ p2 }} ECUs<br>
+    Your payment in module 3: {{ player.payoff }}
+</p>
 {% endblock %}
 
 

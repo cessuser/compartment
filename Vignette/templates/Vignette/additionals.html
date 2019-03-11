@@ -1,0 +1,14 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+<p>
+    Could you answer three additional questions about the scenarios you just read?  You will earn 100 ECUs for each correct answer:
+</p>
+{% formfields %}
+    {% next_button %}
+
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+
+{% block content %}
+
+<div class="col-12 mb-3">
+    <div class="card card-body bg-light">
+        {% if player.cur_trt == 1 %}
+            The Government, consisting of Party Alpha, Beta, and Gamma, commits to one overarching goal that is promoting growth and creating jobs.  They jointly draft government tax and spending policies that they collectively agree to implement.  These government priorities of promoting growth and creating jobs are then announced to the public by the Prime Minister from Party Alpha.
+        {% elif player.cur_trt == 2 %}
+            The Finance Minister from Party Beta commits to one overarching goal that is promoting growth and creating jobs. The Finance Minister drafts government tax and spending policies to be implemented. These government priorities of promoting growth and creating jobs are then announced to the public by the Prime Minister from Party Alpha.
+        {% elif player.cur_trt == 3 %}
+            The Government, consisting of Party Alpha, Beta, and Gamma, commits to one overarching goal that is promoting growth and creating jobs.  They jointly draft government tax and spending policies that they collectively agree to implement.  These government priorities of promoting growth and creating jobs are then announced to the public by the Finance Minister from Party Beta.
+        {% elif player.cur_trt == 4 %}
+            The Finance Minister from Party Beta commits to one overarching goal that is promoting growth and creating jobs. The Finance Minister drafts government tax and spending policies to be implemented. These government priorities of promoting growth and creating jobs are then announced to the public by the Finance Minister from Party Beta.
+        {% elif player.cur_trt == 5 %}
+            The Government, consisting of Party Alpha, Beta, and Gamma, commits to one overarching goal that is promoting growth and creating jobs.  They jointly draft government tax and spending policies that they collectively agree to implement.  These government priorities of promoting growth and creating jobs are then announced to the public by the Prime Minister from Party Alpha.
+        {% elif player.cur_trt == 6 %}
+            The Finance Minister from Party Beta commits to one overarching goal that is promoting growth and creating jobs. The Finance Minister drafts government tax and spending policies to be implemented. These government priorities of promoting growth and creating jobs are then announced to the public by the Prime Minister from Party Alpha.
+        {% elif player.cur_trt == 7 %}
+            The Government, consisting of Party Alpha, Beta, and Gamma, commits to one overarching goal that is promoting growth and creating jobs.  They jointly draft government tax and spending policies that they collectively agree to implement.  These government priorities of promoting growth and creating jobs are then announced to the public by the Finance Minister from Party Beta.
+        {% else %}
+            The Finance Minister from Party Beta commits to one overarching goal that is promoting growth and creating jobs. The Finance Minister drafts government tax and spending policies to be implemented. These government priorities of promoting growth and creating jobs are then announced to the public by the Finance Minister from Party Beta.
+        {% endif %}
+    </div>
+</div>
+    <div class="col-12 mb-3">
+        {% if player.cur_trt < 5 %}
+            We are interested in how voters would react to this government when the economy performs above expectations – so when GDP growth is much higher than normal and unemployment rates drop to very low levels.
+        {% else %}
+            We are interested in how voters react when the economy performs below expectations – GDP growth is much lower than normal and unemployment rates rise to very high levels.
+        {% endif %}
+    </div>
+<p>
+    {% if player.cur_trt < 5 %}
+        1. {{ form.q1.label }}
+    {% else %}
+        1. As a voter how would you evaluate Party Alpha, the Prime Minister’s Party, for an economy that performs below expectations? On the left is “very bad” and on the right is “very good”.
+    {% endif %}
+<div style="margin-left:300px;">very bad &nbsp;<input name = "q1", type="range"> &nbsp;very good</div>
+<br>
+    {% if player.cur_trt < 5 %}
+        2. {{ form.q2.label }}
+    {% else %}
+        2. As a voter how would you evaluate Party Beta, the Finance Minister’s Party, for an economy that performs below expectations? On the left is “very bad” and on the right is “very good”.
+    {% endif %}
+<div style="margin-left:300px;">very bad &nbsp;<input name = "q2", type="range"> &nbsp;very good</div>
+<br>
+    {% if player.cur_trt < 5 %}
+        3. {{ form.q3.label }}
+    {% else %}
+        3. As a voter how would you evaluate Party Gamma, the Minister of Foreign Affair’s Party, for an economy that performs below expectations? On the left is “very bad” and on the right is “very good”.
+    {% endif %}
+<div style="margin-left:300px;">very bad &nbsp;<input name = "q3", type="range"> &nbsp;very good</div>
+<br>
+{% if player.cur_trt > 4 %}
+    {% formfield player.q4 label="4. Which of the three parties do you think is primarily responsible for the low GDP growth rates and higher unemployment levels?" %}
+{% else %}
+    {% formfield player.q4 %}
+{% endif %}
+</p>
+<br><br>
+
+
+{% next_button %}
+{% endblock %}
+

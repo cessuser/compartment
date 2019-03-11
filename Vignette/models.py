@@ -14,7 +14,7 @@ doc = """
 class Constants(BaseConstants):
     name_in_url = 'Vignette'
     players_per_group = None
-    num_rounds = 1
+    num_rounds = 2
 
     dice_prize = 25
 
@@ -24,7 +24,12 @@ class Subsession(BaseSubsession):
     treatment = models.IntegerField(min=1, max=10)
 
     def creating_session(self):
-        self.treatment = self.session.config['treatment']
+        if self.round_number == 1:
+            for p in self.get_players():
+                if self.session.config['negative']:
+                    p.participant.vars['trts'] = random.sample([5,6,7,8], 2)
+                else:
+                    p.participant.vars['trts'] = random.sample([1,2,3,4],2)
 
 
 class Group(BaseGroup):
@@ -32,36 +37,28 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-    dice1 = models.IntegerField(min=1, max=6,
+    dice = models.IntegerField(min=1, max=6,
                                 label="Please enter your dice value: ", widget=widgets.TextInput)
-    real_dice1 = models.IntegerField(min=1,max=6)
-    dice2 = models.IntegerField(min=1, max=6,
-                                label="Please enter your dice value: ", widget=widgets.TextInput)
-    real_dice2 = models.IntegerField(min=1, max=6)
-    dice3 = models.IntegerField(min=1, max=6,
-                                label="Please enter your dice value: ", widget=widgets.TextInput)
-    real_dice3 = models.IntegerField(min=1, max=6)
-    dice4 = models.IntegerField(min=1, max=6,
-                                label="Please enter your dice value: ", widget=widgets.TextInput)
-    real_dice4 = models.IntegerField(min=1, max=6)
-    treat = models.IntegerField()
-    counts = models.IntegerField(min=1, max=10,
-                             label="How many parties are in the governing coalition, i.e., in the government?"
-                                   " Paid 100 ECUs for a correct answer.", widget=widgets.TextInput)
-    ctlPM = models.IntegerField(choices=[(1, "Party 1"), (2, "Party 2"), (3, "Party 3")],
-                             widget=widgets.RadioSelect,
-                             label="What party controls the PM? Paid 100 ECUs for correct answer.")
-    ctlFM = models.IntegerField(choices=[(1, "Party 1"), (2, "Party 2"), (3, "Party 3")],
-                             widget=widgets.RadioSelect,
-                             label="What party controls the FM? Paid 100 ECUs for correct answer.")
-    ctlHC = models.IntegerField(choices=[(1, "Party 1"), (2, "Party 2"), (3, "Party 3")],
-                             widget=widgets.RadioSelect,
-                             label="What party controls the Health Care? Paid 100 ECUs for correct answer.")
-    perfGovern = models.IntegerField(label="Based on the vignette account, how would you rate the government’s performance on this slider? On the left is “very bad” and on the right is “very good”.  Toss electronic die and report the result for payment.  You receive 25 ECUs for each die digit you report – so 25 ECU if you roll a 1; 50 ECUs if you roll a 2; up to 150 ECUs if you roll a 6.")
-    perfP1 = models.IntegerField(
-        label="How do you think voters would evaluate Party 1, the Prime Minister’s Party, in this example? On the left is “very bad” and on the right is “very good”. Toss electronic die and report the result for payment.  You receive 25 ECUs for each die digit you report – so 25 ECU if you roll a 1; 50 ECUs if you roll a 2; up to 150 ECUs if you roll a 6.")
-    perfP2 = models.IntegerField(
-        label="How do you think voters would evaluate Party 2, the Finance Minister’s Party, in this example? On the left is “very bad” and on the right is “very good”. Toss electronic die and report the result for payment.  You receive 25 ECUs for each die digit you report – so 25 ECU if you roll a 1; 50 ECUs if you roll a 2; up to 150 ECUs if you roll a 6.")
+    real_dice = models.IntegerField(min=1,max=6)
+    cur_trt = models.IntegerField()
 
-    perfP3 = models.IntegerField(
-        label="How do you think voters would evaluate Party 3, the Minister of Health’s Party, in this example? On the left is “very bad” and on the right is “very good”. Toss electronic die and report the result for payment.  You receive 25 ECUs for each die digit you report – so 25 ECU if you roll a 1; 50 ECUs if you roll a 2; up to 150 ECUs if you roll a 6.")
+    q1 = models.IntegerField(label='As a voter how would you evaluate Party Alpha, the Prime Minister’s Party, for an economy that performs above expectations? On the left is “very bad” and on the right is “very good”. ')
+    q2 = models.IntegerField(label='As a voter how would you evaluate Party Beta, the Finance Minister’s Party, for an economy that performs above expectations? On the left is “very bad” and on the right is “very good”. ')
+    q3 = models.IntegerField(label='As a voter how would you evaluate Party Gamma, the Minister of Foreign Affair’s Party, for an economy that performs above expectations? On the left is “very bad” and on the right is “very good”. ')
+    q4 = models.StringField(choices=['Party Alpha', 'Party Beta', 'Party Gamma'], widget=widgets.RadioSelect,
+                            label='4. Which of the three parties do you think is responsible for the high GDP growth rates and lower unemployment levels?')
+    a1 = models.StringField(choices=['Party Alpha', 'Party Beta', 'Party Gamma'],
+                            label='What party controls the Prime Ministership? Paid 100 ECUs for correct answer.', widget=widgets.RadioSelect)
+    a2 = models.StringField(choices=['Party Alpha', 'Party Beta', 'Party Gamma'],
+                            label='What party controls the Finance Ministry? Paid 100 ECUs for correct answer.', widget=widgets.RadioSelect)
+    a3 = models.StringField(choices=['Party Alpha', 'Party Beta', 'Party Gamma'],
+                            label='What party controls the Ministry of Foreign Affairs? Paid 100 ECUs for correct answer.', widget=widgets.RadioSelect)
+
+    def set_payoff(self):
+        self.payoff = Constants.dice_prize * (self.participant.vars['dice1'] + self.participant.vars['dice2'])
+        if self.a1 == 'Party Alpha':
+            self.payoff += 100
+        if self.a2 == 'Party Beta':
+            self.payoff += 100
+        if self.a3 == 'Party Gamma':
+            self.payoff += 100

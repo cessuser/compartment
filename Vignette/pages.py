@@ -2,63 +2,63 @@ from otree.api import Currency as c, currency_range
 from ._builtin import Page, WaitPage
 from .models import Constants
 from . import models
-
+import random
 
 class Introduction(Page):
+    def is_displayed(self):
+        return self.round_number == 1
+
     def vars_for_template(self):
         self.player.payoff = 0
 
 
-class Questions(Page):
+
+class trt1_1(Page):
+    def vars_for_template(self):
+        self.player.cur_trt = self.player.participant.vars['trts'][self.round_number-1]
+
+
+class trt1_2(Page):
     form_model = models.Player
-    form_fields = ['counts', 'ctlPM','ctlFM','ctlHC']
+    form_fields = ['q1', 'q2', 'q3', 'q4']
+
+class trt1_3(Page):
+    form_model = models.Player
+    form_fields = ['dice', 'real_dice']
 
     def before_next_page(self):
-        if self.player.counts == 3:
-            self.player.payoff += 100
-        if self.player.ctlPM == 1:
-            self.player.payoff += 100
-        if self.player.ctlFM == 2:
-            self.player.payoff += 100
-        if self.player.ctlHC == 3:
-            self.player.payoff += 100
+        if self.round_number == 1:
+            self.player.participant.vars['dice1'] = self.player.dice
+        else:
+            self.player.participant.vars['dice2'] = self.player.dice
 
-class Questions1(Page):
+
+class Results(Page):
+    def is_displayed(self):
+        return  self.round_number == Constants.num_rounds
+
+    def vars_for_template(self):
+        self.player.set_payoff()
+        p1 = self.player.participant.vars['n_correct1_M5'] * 150
+        p2 = self.player.participant.vars['words_found'] * 100
+
+        return {
+            'p1': p1,
+            'p2': p2,
+
+        }
+
+class additionals(Page):
+    form_fields = ['a1', 'a2', 'a3']
     form_model = models.Player
-    form_fields = ['perfGovern', 'dice1','real_dice1']
-
-    def before_next_page(self):
-        self.player.payoff += self.player.dice1 * Constants.dice_prize
-
-
-class Questions2(Page):
-    form_model = models.Player
-    form_fields = ['perfP1', 'dice2', 'real_dice2']
-
-    def before_next_page(self):
-        self.player.payoff += self.player.dice2 * Constants.dice_prize
-
-
-class Questions3(Page):
-    form_model = models.Player
-    form_fields = ['perfP2', 'dice3','real_dice3']
-
-    def before_next_page(self):
-        self.player.payoff += self.player.dice3 * Constants.dice_prize
-
-class Questions4(Page):
-    form_model = models.Player
-    form_fields = ['perfP3', 'dice4', 'real_dice4']
-
-    def before_next_page(self):
-        self.player.payoff += self.player.dice4 * Constants.dice_prize
-
+    def is_displayed(self):
+        return  self.round_number == Constants.num_rounds
 
 page_sequence = [
     Introduction,
-    Questions,
-    Questions1,
-    Questions2,
-    Questions3,
-    Questions4
+    trt1_1,
+    trt1_2,
+    trt1_3,
+    additionals,
+    Results
 ]

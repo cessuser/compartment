@@ -13,40 +13,29 @@ SESSION_CONFIG_DEFAULTS = {
 
 SESSION_CONFIGS = [
     {
-        'name': 'compartment_trt1',
-        'display_name': "compartment_trt1",
+        'name': 'compartment_positive',
+        'display_name': "compartment_positive",
         'num_demo_participants': 1,
         'treatment': 1,
+        'negative': False,
         'app_sequence': ['number_add1', 'word_search', 'Vignette'],
     },
     {
-        'name': 'compartment_trt2',
-        'display_name': "compartment_trt2",
+        'name': 'compartment_negative',
+        'display_name': "compartment_negative",
         'num_demo_participants': 1,
-        'treatment': 2,
+        'treatment': 1,
+        'negative': True,
         'app_sequence': ['number_add1', 'word_search', 'Vignette'],
     },
-    {
-        'name': 'compartment_trt3',
-        'display_name': "compartment_trt3",
-        'num_demo_participants': 1,
-        'treatment': 3,
-        'app_sequence': ['number_add1', 'word_search', 'Vignette'],
-    },
-    {
-        'name': 'compartment_trt4',
-        'display_name': "compartment_trt4",
-        'num_demo_participants': 1,
-        'treatment': 4,
-        'app_sequence': ['number_add1', 'word_search', 'Vignette'],
-    },
-    {
-        'name': 'Vignette',
-        'display_name': "Vignette",
-        'num_demo_participants': 1,
-        'treatment': 4,
-        'app_sequence': ['Vignette'],
-    },
+    # {
+    #     'name': 'Vignette',
+    #     'display_name': "Vignette",
+    #     'num_demo_participants': 2,
+    #     'treatment': 4,
+    #     'negative': True,
+    #     'app_sequence': ['Vignette'],
+    # },
 
 
 ]
@@ -58,6 +47,7 @@ LANGUAGE_CODE = 'en'
 
 # e.g. EUR, GBP, CNY, JPY
 REAL_WORLD_CURRENCY_CODE = 'USD'
+POINTS_CUSTOM_NAME = 'ECUs'
 USE_POINTS = True
 
 
