@@ -54,6 +54,7 @@ class Player(BasePlayer):
     a3 = models.StringField(choices=['Party Alpha', 'Party Beta', 'Party Gamma'],
                             label='What party controls the Ministry of Foreign Affairs? Paid 100 ECUs for correct answer.', widget=widgets.RadioSelect)
 
+
     def set_payoff(self):
         self.payoff = Constants.dice_prize * (self.participant.vars['dice1'] + self.participant.vars['dice2'])
         if self.a1 == 'Party Alpha':

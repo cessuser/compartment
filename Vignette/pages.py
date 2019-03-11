@@ -52,7 +52,12 @@ class additionals(Page):
     form_fields = ['a1', 'a2', 'a3']
     form_model = models.Player
     def is_displayed(self):
+
         return  self.round_number == Constants.num_rounds
+
+    def vars_for_template(self):
+        self.player.set_payoff()
+        self.player.participant.vars['vignette'] = self.player.payoff
 
 page_sequence = [
     Introduction,
@@ -60,5 +65,5 @@ page_sequence = [
     trt1_2,
     trt1_3,
     additionals,
-    Results
+    # Results
 ]

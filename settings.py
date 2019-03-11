@@ -18,7 +18,7 @@ SESSION_CONFIGS = [
         'num_demo_participants': 1,
         'treatment': 1,
         'negative': False,
-        'app_sequence': ['number_add1', 'word_search', 'Vignette'],
+        'app_sequence': ['number_add1', 'word_search', 'Vignette','survey'],
     },
     {
         'name': 'compartment_negative',
@@ -26,7 +26,7 @@ SESSION_CONFIGS = [
         'num_demo_participants': 1,
         'treatment': 1,
         'negative': True,
-        'app_sequence': ['number_add1', 'word_search', 'Vignette'],
+        'app_sequence': ['number_add1', 'word_search', 'Vignette', 'survey'],
     },
     # {
     #     'name': 'Vignette',
