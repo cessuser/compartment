@@ -31,5 +31,6 @@ class demographic(Page):
     form_fields = ['age', 'gender', 'gender_other', 'student', 'edu_level', 'major', 'major_other','math_course', 'econ_course']
 
 page_sequence = [
-    demographic
+    demographic,
+    Results
 ]
