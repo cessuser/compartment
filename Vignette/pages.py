@@ -27,10 +27,7 @@ class trt1_3(Page):
     form_fields = ['dice', 'real_dice']
 
     def before_next_page(self):
-        if self.round_number == 1:
             self.player.participant.vars['dice1'] = self.player.dice
-        else:
-            self.player.participant.vars['dice2'] = self.player.dice
 
 
 class Results(Page):

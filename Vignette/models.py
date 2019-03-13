@@ -14,7 +14,7 @@ doc = """
 class Constants(BaseConstants):
     name_in_url = 'Vignette'
     players_per_group = None
-    num_rounds = 2
+    num_rounds = 1
 
     dice_prize = 25
 
@@ -27,9 +27,9 @@ class Subsession(BaseSubsession):
         if self.round_number == 1:
             for p in self.get_players():
                 if self.session.config['negative']:
-                    p.participant.vars['trts'] = random.sample([5,6,7,8], 2)
+                    p.participant.vars['trts'] = random.sample([5,6,7,8], 1)
                 else:
-                    p.participant.vars['trts'] = random.sample([1,2,3,4],2)
+                    p.participant.vars['trts'] = random.sample([1,2,3,4],1)
 
 
 class Group(BaseGroup):
@@ -56,7 +56,7 @@ class Player(BasePlayer):
 
 
     def set_payoff(self):
-        self.payoff = Constants.dice_prize * (self.participant.vars['dice1'] + self.participant.vars['dice2'])
+        self.payoff = Constants.dice_prize * self.participant.vars['dice1']
         if self.a1 == 'Party Alpha':
             self.payoff += 100
         if self.a2 == 'Party Beta':

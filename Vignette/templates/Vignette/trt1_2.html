@@ -38,21 +38,36 @@
     {% else %}
         1. As a voter how would you evaluate Party Alpha, the Prime Minister’s Party, for an economy that performs below expectations? On the left is “very bad” and on the right is “very good”.
     {% endif %}
-<div style="margin-left:300px;">very bad &nbsp;<input name = "q1", type="range"> &nbsp;very good</div>
-<br>
+    <br>
+    <!--very bad &nbsp;<input name = "q1", type="range" id="slider"> &nbsp;very good-->
+<div class="slidecontainer">
+    very bad <input type="range" min="1" max="100" value="50" name="q1" class="slider" id="id_q1">  very good
+    <br><br>
+<p align="center">Value: <span id="q1_val"></span></p>
+</div>
+    <br>
     {% if player.cur_trt < 5 %}
         2. {{ form.q2.label }}
     {% else %}
         2. As a voter how would you evaluate Party Beta, the Finance Minister’s Party, for an economy that performs below expectations? On the left is “very bad” and on the right is “very good”.
     {% endif %}
-<div style="margin-left:300px;">very bad &nbsp;<input name = "q2", type="range"> &nbsp;very good</div>
-<br>
+<br><br>
+<div class="slidecontainer">
+    very bad <input type="range" min="1" max="100" value="50" name="q2" class="slider" id="id_q2">  very good
+    <br><br>
+<p align="center">Value: <span id="q2_val"></span></p>
+</div>
     {% if player.cur_trt < 5 %}
         3. {{ form.q3.label }}
     {% else %}
         3. As a voter how would you evaluate Party Gamma, the Minister of Foreign Affair’s Party, for an economy that performs below expectations? On the left is “very bad” and on the right is “very good”.
     {% endif %}
-<div style="margin-left:300px;">very bad &nbsp;<input name = "q3", type="range"> &nbsp;very good</div>
+<br><br>
+<div class="slidecontainer">
+    very bad <input type="range" min="1" max="100" value="50" name="q3" class="slider" id="id_q3">  very good
+    <br><br>
+<p align="center">Value: <span id="q3_val"></span></p>
+</div>
 <br>
 {% if player.cur_trt > 4 %}
     {% formfield player.q4 label="4. Which of the three parties do you think is primarily responsible for the low GDP growth rates and higher unemployment levels?" %}
@@ -62,7 +77,60 @@
 </p>
 <br><br>
 
+<style>
+.slider {
+  -webkit-appearance: none;
+  width: 80%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
 
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #0084FF;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background:#0084FF;
+  cursor: pointer;
+}
+</style>
+<script>
+var slider1 = document.getElementById("id_q1");
+var output1 = document.getElementById("q1_val");
+output1.innerHTML = slider1.value;
+
+var slider2 = document.getElementById("id_q2");
+var output2 = document.getElementById("q2_val");
+output2.innerHTML = slider2.value;
+
+var slider3 = document.getElementById("id_q3");
+var output3 = document.getElementById("q3_val");
+output3.innerHTML = slider3.value;
+
+slider1.oninput = function() {
+  output1.innerHTML = this.value;
+}
+slider2.oninput = function() {
+  output2.innerHTML = this.value;
+}
+slider3.oninput = function() {
+  output3.innerHTML = this.value;
+}
+</script>
 {% next_button %}
 {% endblock %}
 

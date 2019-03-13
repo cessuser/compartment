@@ -15,7 +15,6 @@ class ResultsWaitPage(WaitPage):
 
 class Results(Page):
     def vars_for_template(self):
-        self.player.set_payoff()
         p1 = self.player.participant.vars['n_correct1_M5'] * 150
         p2 = self.player.participant.vars['words_found'] * 100
         p3 = self.player.participant.vars['vignette']

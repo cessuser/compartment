@@ -9,7 +9,7 @@ class Introduction(Page):
 
 
 class WordPuzzle(Page):
-    timeout_seconds = Constants.word_puzzle_seconds + 1
+    timeout_seconds = Constants.word_puzzle_seconds
 
 
 class WordsFound(Page):

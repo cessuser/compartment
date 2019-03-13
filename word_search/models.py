@@ -19,7 +19,7 @@ class Constants(BaseConstants):
     players_per_group = None
     num_rounds = 1
 
-    word_puzzle_seconds = 60
+    word_puzzle_seconds = 30
     prize = 100
 
 
