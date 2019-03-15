@@ -13,21 +13,21 @@ SESSION_CONFIG_DEFAULTS = {
 
 SESSION_CONFIGS = [
     {
-        'name': 'compartment_positive',
-        'display_name': "compartment_positive",
+        'name': 'compartment_combined',
+        'display_name': "compartment_combined",
         'num_demo_participants': 1,
         'treatment': 1,
         'negative': False,
         'app_sequence': ['number_add1', 'word_search', 'Vignette','survey'],
     },
-    {
-        'name': 'compartment_negative',
-        'display_name': "compartment_negative",
-        'num_demo_participants': 1,
-        'treatment': 1,
-        'negative': True,
-        'app_sequence': ['number_add1', 'word_search', 'Vignette', 'survey'],
-    },
+    # {
+    #     'name': 'compartment_negative',
+    #     'display_name': "compartment_negative",
+    #     'num_demo_participants': 1,
+    #     'treatment': 1,
+    #     'negative': True,
+    #     'app_sequence': ['number_add1', 'word_search', 'Vignette', 'survey'],
+    # },
     # {
     #     'name': 'Vignette',
     #     'display_name': "Vignette",
@@ -46,15 +46,20 @@ SESSION_CONFIGS = [
 LANGUAGE_CODE = 'en'
 
 # e.g. EUR, GBP, CNY, JPY
-REAL_WORLD_CURRENCY_CODE = 'USD'
+REAL_WORLD_CURRENCY_CODE = 'GBP'
 POINTS_CUSTOM_NAME = 'ECUs'
 USE_POINTS = True
 
 
 ROOMS = [
     {
-        'name': 'test',
-        'display_name': 'test',
+        'name': 'test_UK_label',
+        'display_name': 'test_UK_label',
+        'participant_label_file': '_rooms/test_UK.txt',
+    },
+    {
+        'name': 'test_UK',
+        'display_name': 'test_UK',
     },
 ]
 

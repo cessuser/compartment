@@ -14,9 +14,10 @@ doc = """
 class Constants(BaseConstants):
     name_in_url = 'Vignette'
     players_per_group = None
-    num_rounds = 1
+    num_rounds = 2
 
     dice_prize = 25
+
 
 
 
@@ -26,11 +27,9 @@ class Subsession(BaseSubsession):
     def creating_session(self):
         if self.round_number == 1:
             for p in self.get_players():
-                if self.session.config['negative']:
-                    p.participant.vars['trts'] = random.sample([5,6,7,8], 1)
-                else:
-                    p.participant.vars['trts'] = random.sample([1,2,3,4],1)
-
+                p.participant.vars['trts'] = [random.choice([5,6,7,8])]
+                p.participant.vars['trts'].append(random.choice([1,2,3,4]))
+                random.shuffle(p.participant.vars['trts'])
 
 class Group(BaseGroup):
     pass
@@ -54,9 +53,8 @@ class Player(BasePlayer):
     a3 = models.StringField(choices=['Party Alpha', 'Party Beta', 'Party Gamma'],
                             label='What party controls the Ministry of Foreign Affairs? Paid 100 ECUs for correct answer.', widget=widgets.RadioSelect)
 
-
     def set_payoff(self):
-        self.payoff = Constants.dice_prize * self.participant.vars['dice1']
+        self.payoff = Constants.dice_prize * sum(self.participant.vars['dice1'])
         if self.a1 == 'Party Alpha':
             self.payoff += 100
         if self.a2 == 'Party Beta':

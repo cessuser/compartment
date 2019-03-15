@@ -18,6 +18,7 @@ class Results(Page):
         p1 = self.player.participant.vars['n_correct1_M5'] * 150
         p2 = self.player.participant.vars['words_found'] * 100
         p3 = self.player.participant.vars['vignette']
+        print(self.player.participant.vars['dice1'])
         self.player.payoff = p1 + p2 + p3
         return {
             'p1': p1,
