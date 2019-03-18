@@ -23,14 +23,16 @@ class trt1_2(Page):
 
 
 class trt1_3(Page):
-    form_model = models.Player
-    form_fields = ['dice', 'real_dice']
-
     def before_next_page(self):
-        if self.round_number == 1:
-            self.player.participant.vars['dice1'] = []
-        self.player.participant.vars['dice1'].append(self.player.dice)
+        self.player.real_die_value = random.randint(1,6)
 
+    def dice_error_message(self, value):
+        if value > 6 or value < 1:
+            return 'Invalid value! To continue, please roll the dice again, and enter a value between 1 and 6! '
+
+    def real_dice_error_message(self,value):
+        if value == '':
+            return "Please make sure your dice is rolled."
 
 class additionals(Page):
     form_fields = ['a1', 'a2', 'a3']
@@ -43,11 +45,26 @@ class additionals(Page):
         self.player.set_payoff()
         self.player.participant.vars['vignette'] = self.player.payoff
 
+class trt1_3_1(Page):
+    form_model = models.Player
+    form_fields = ['dice']
+
+    def before_next_page(self):
+        if self.round_number == 1:
+            self.player.participant.vars['dice1'] = []
+        self.player.participant.vars['dice1'].append(self.player.dice)
+
+    def dice_error_message(self, value):
+        if value > 6 or value < 1:
+            return 'Invalid value! To continue, please roll the dice again, and enter a value between 1 and 6! '
+
+
 page_sequence = [
     Introduction,
     trt1_1,
     trt1_2,
     trt1_3,
+    trt1_3_1,
     additionals,
     # Results
 ]
