@@ -56,7 +56,7 @@ class trt1_3_1(Page):
 
     def dice_error_message(self, value):
         if value > 6 or value < 1:
-            return 'Invalid value! To continue, please roll the dice again, and enter a value between 1 and 6! '
+            return 'Invalid value! Please enter a value between 1 and 6! '
 
 
 page_sequence = [

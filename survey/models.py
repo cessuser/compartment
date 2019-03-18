@@ -53,3 +53,5 @@ class Player(BasePlayer):
     major_other = models.StringField(label="other(Please specify)", blank=True)
     math_course = models.IntegerField(label="6.How many college-level mathematics courses have you taken")
     econ_course = models.IntegerField(label="7.How many college-level economics courses have you taken?")
+
+    final_payoff = models.FloatField(min=0)

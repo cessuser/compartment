@@ -20,6 +20,7 @@ class Results(Page):
         p3 = self.player.participant.vars['vignette']
         print(self.player.participant.vars['dice1'])
         self.player.payoff = p1 + p2 + p3
+        self.player.final_payoff = round(float(self.player.payoff * self.session.config['real_world_currency_per_point']),2)
         return {
             'p1': p1,
             'p2': p2,
