@@ -70,6 +70,9 @@ class Introduction0(Page):
     def is_displayed(self):
         return self.round_number == 1
 
+    def vars_for_template(self):
+        self.player.set_label()
+
 page_sequence = [
     Introduction0,
     Introduction,

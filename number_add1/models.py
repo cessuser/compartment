@@ -44,6 +44,7 @@ class Group(BaseGroup):
             pair[0].payoff = pair[1] * Constants.prize
 
 class Player(BasePlayer):
+    label = models.StringField()
     url_assigned = models.StringField()
     answer = models.IntegerField() # player answer
     correct = models.IntegerField() # if correct
@@ -54,6 +55,8 @@ class Player(BasePlayer):
     rank = models.IntegerField()
 
 
+    def set_label(self):
+        self.label = self.participant.label
 
     def check_correct(self):
         if self.round_number == 1:

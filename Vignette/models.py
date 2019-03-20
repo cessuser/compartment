@@ -40,6 +40,7 @@ class Player(BasePlayer):
     real_die_value = models.IntegerField(min=1, max=6)
     cur_trt = models.IntegerField()
 
+
     q1 = models.IntegerField(label='As a voter how would you evaluate Party Alpha, the Prime Minister’s Party, for an economy that performs above expectations? On the left is “very bad” and on the right is “very good”. ')
     q2 = models.IntegerField(label='As a voter how would you evaluate Party Beta, the Finance Minister’s Party, for an economy that performs above expectations? On the left is “very bad” and on the right is “very good”. ')
     q3 = models.IntegerField(label='As a voter how would you evaluate Party Gamma, the Minister of Foreign Affair’s Party, for an economy that performs above expectations? On the left is “very bad” and on the right is “very good”. ')
