@@ -6,24 +6,61 @@ from os import environ
 # e.g. self.session.config['participation_fee']
 
 SESSION_CONFIG_DEFAULTS = {
-    'real_world_currency_per_point': 0.00125,
     'participation_fee': 0.00,
     'doc': "",
 }
 
 SESSION_CONFIGS = [
     {
-        'name': 'compartment_combined_UK',
-        'display_name': "compartment_combined_UK",
+        'name': 'compartment_combined_UK_800',
+        'display_name': "compartment_combined_UK_800",
         'num_demo_participants': 1,
+        'real_world_currency_per_point': 0.00125,
         'UK': True,
         'Ireland':False,
         'app_sequence': ['number_add1', 'word_search', 'Vignette','survey'],
     },
     {
-        'name': 'compartment_combined_Ireland',
-        'display_name': "compartment_combined_Ireland",
+        'name': 'compartment_combined_UK_1000',
+        'display_name': "compartment_combined_UK_1000",
         'num_demo_participants': 1,
+        'real_world_currency_per_point': 0.001,
+        'UK': True,
+        'Ireland':False,
+        'app_sequence': ['number_add1', 'word_search', 'Vignette','survey'],
+    },
+    {
+        'name': 'compartment_combined_UK_1200',
+        'display_name': "compartment_combined_UK_1200",
+        'num_demo_participants': 1,
+        'real_world_currency_per_point': 0.0008333,
+        'UK': True,
+        'Ireland':False,
+        'app_sequence': ['number_add1', 'word_search', 'Vignette','survey'],
+    },
+    {
+        'name': 'compartment_combined_Ireland_800',
+        'display_name': "compartment_combined_Ireland_800",
+        'num_demo_participants': 1,
+        'real_world_currency_per_point': 0.00125,
+        'UK': False,
+        'Ireland': True,
+        'app_sequence': ['number_add1', 'word_search', 'Vignette','survey'],
+    },
+    {
+        'name': 'compartment_combined_Ireland_1000',
+        'display_name': "compartment_combined_Ireland_1000",
+        'num_demo_participants': 1,
+        'real_world_currency_per_point': 0.001,
+        'UK': False,
+        'Ireland': True,
+        'app_sequence': ['number_add1', 'word_search', 'Vignette','survey'],
+    },
+    {
+        'name': 'compartment_combined_Ireland_1200',
+        'display_name': "compartment_combined_Ireland_1200",
+        'num_demo_participants': 1,
+        'real_world_currency_per_point': 0.0008333,
         'UK': False,
         'Ireland': True,
         'app_sequence': ['number_add1', 'word_search', 'Vignette','survey'],

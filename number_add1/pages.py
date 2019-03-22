@@ -72,6 +72,9 @@ class Introduction0(Page):
 
     def vars_for_template(self):
         self.player.set_label()
+        return {
+            'rate': int(1/self.session.config['real_world_currency_per_point'])
+        }
 
 page_sequence = [
     Introduction0,
