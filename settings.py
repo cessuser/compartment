@@ -13,11 +13,18 @@ SESSION_CONFIG_DEFAULTS = {
 
 SESSION_CONFIGS = [
     {
-        'name': 'compartment_combined',
-        'display_name': "compartment_combined",
+        'name': 'compartment_combined_UK',
+        'display_name': "compartment_combined_UK",
         'num_demo_participants': 1,
-        'treatment': 1,
-        'negative': False,
+        'UK': True,
+        'app_sequence': ['number_add1', 'word_search', 'Vignette','survey'],
+    },
+    {
+        'name': 'compartment_combined_Ireland',
+        'display_name': "compartment_combined_Ireland",
+        'num_demo_participants': 1,
+        'UK': False,
+        'Ireland': True,
         'app_sequence': ['number_add1', 'word_search', 'Vignette','survey'],
     },
     # {

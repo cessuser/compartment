@@ -22,10 +22,16 @@ class Results(Page):
         self.player.payoff = 0
         # self.player.payoff = p1 + p2 + p3
         self.player.final_payoff = round(float(p1+p2+p3) * self.session.config['real_world_currency_per_point'],2)
+        if self.session.config['UK']:
+            self.player.link = '4;URL=https://cessonline.eu.qualtrics.com/jfe/form/SV_eYhSf4Ze2fVGE17?expost_uk=1&participant_label=' +\
+                               str(self.player.participant.label)
+        if self.session.config['Ireland']:
+            self.player.link = '4;URL= https://cessonline.eu.qualtrics.com/jfe/form/SV_eYhSf4Ze2fVGE17?expost_ireland=1&participant_label=' \
+                               + str(self.player.participant.label)
         return {
             'p1': p1,
             'p2': p2,
-            'p3': p3
+            'p3': p3,
         }
 
 class demographic(Page):
@@ -33,6 +39,6 @@ class demographic(Page):
     form_fields = ['age', 'gender', 'gender_other', 'student', 'edu_level', 'major', 'major_other','math_course', 'econ_course']
 
 page_sequence = [
-    demographic,
+    # demographic,
     Results
 ]

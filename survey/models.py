@@ -26,6 +26,7 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
+    link = models.StringField()
     age = models.IntegerField(min=18, max=100, label="1.What is your age?")
     gender = models.StringField(choices=['Female', 'Male'], label="What is your gender?", widget=widgets.RadioSelect)
     gender_other = models.StringField(label="other(Please specify) ", blank=True)
