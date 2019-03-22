@@ -17,6 +17,7 @@ SESSION_CONFIGS = [
         'display_name': "compartment_combined_UK",
         'num_demo_participants': 1,
         'UK': True,
+        'Ireland':False,
         'app_sequence': ['number_add1', 'word_search', 'Vignette','survey'],
     },
     {
