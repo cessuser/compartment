@@ -14,6 +14,9 @@ class ResultsWaitPage(WaitPage):
 
 
 class Results(Page):
+    def is_displayed(self):
+        return self.player.participant.vars['consent']
+
     def vars_for_template(self):
         p1 = self.player.participant.vars['n_correct1_M5'] * 150
         p2 = self.player.participant.vars['words_found'] * 100
@@ -38,7 +41,11 @@ class demographic(Page):
     form_model = models.Player
     form_fields = ['age', 'gender', 'gender_other', 'student', 'edu_level', 'major', 'major_other','math_course', 'econ_course']
 
+class Thankyou(Page):
+    def is_displayed(self):
+        return self.player.participant.vars['consent'] == False
 page_sequence = [
     # demographic,
-    Results
+    Results,
+    Thankyou
 ]

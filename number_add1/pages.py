@@ -76,7 +76,23 @@ class Introduction0(Page):
             'rate': int(1/self.session.config['real_world_currency_per_point'])
         }
 
+class consent_form(Page):
+    form_fields = ['consent']
+    form_model = models.Player
+
+    def is_displayed(self):
+        return self.round_number == 1
+
+    def app_after_this_page(self, upcoming_apps):
+        if self.player.consent == False:
+            self.player.participant.vars['consent'] = False
+            return upcoming_apps[-1]
+
+    def before_next_page(self):
+        self.player.participant.vars['consent'] = self.player.consent
+
 page_sequence = [
+    consent_form,
     Introduction0,
     Introduction,
     TaskPage,

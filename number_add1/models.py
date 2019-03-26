@@ -44,6 +44,9 @@ class Group(BaseGroup):
             pair[0].payoff = pair[1] * Constants.prize
 
 class Player(BasePlayer):
+    consent = models.BooleanField(widget=widgets.RadioSelect,
+                                 label='Do you agree the above content?',
+                                 choices=[(True, 'Yes'), (False, 'No')])
     label = models.StringField()
     url_assigned = models.StringField()
     answer = models.IntegerField() # player answer

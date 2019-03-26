@@ -1,0 +1,30 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Survey Consent Form
+{% endblock %}
+
+{% block content %}
+<p>
+    You are being invited to participate in a research study titled OE_0026 on government policy making. This study is being done by Raymond Duch from Centre for Experimental Social Sciences, Nuffield, the University of Oxford. 
+</p>
+<p>
+    The purpose of this research study is to help us understand how government policy making works in the U.K., and will take you approximately 10 minutes to complete. Your participation in this study is entirely voluntary and you may withdraw at any time. If you decide not to participate in this study or if you withdraw from participating at any time, you will not be penalized. You do not have to answer any questions you do not want to.
+</p>
+<p>
+    After you complete the survey, you will be informed of your earnings at the end of the survey.  You will be paid by at the exchange rate 1000 ECUs=1 £. Due to CESS policy and IRB regulations, we may have to collect your name, address, social security or tax ID number, and signature in order to give you this compensation.
+</p>
+<p>
+    We believe there are no known risks associated with this research study; however, as with any online related activity the risk of a breach is always possible. To the best of our ability your participation in this study will remain confidential, and only anonymised data will be published. We will do our best to keep your information confidential. All data is stored in a password protected electronic format. To help protect your confidentiality, the surveys will not contain information that will personally identify you. The results of this study will be used for scholarly purposes.
+</p>
+<p>
+    If you have any questions about the research study, please contact cess-online@nuffield.ox.ac.uk. You could go to https://www.youtube.com/watch?v=nkPA3fb6K84&feature=youtu.be to watch our Ethics Video. This research has been reviewed according to CESS IRB procedures for research involving human subjects.
+</p>
+<p>
+    I have read the information above. By signing below and returning this form, I am consenting to participate in this survey project.
+</p>
+{% formfields %}
+<br>
+{% next_button %}
+{% endblock%}
