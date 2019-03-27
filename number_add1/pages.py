@@ -96,6 +96,6 @@ page_sequence = [
     Introduction0,
     Introduction,
     TaskPage,
-    ResultWaitPage,
+    # ResultWaitPage,
     Results
 ]
