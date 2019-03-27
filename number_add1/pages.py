@@ -47,7 +47,7 @@ class ResultWaitPage(WaitPage):
     wait_for_all_groups = True
 
     def is_displayed(self):
-        return self.round_number == Constants.num_rounds
+        return self.round_number > Constants.num_rounds
 
     def after_all_players_arrive(self):
         pass
@@ -96,6 +96,6 @@ page_sequence = [
     Introduction0,
     Introduction,
     TaskPage,
-    # ResultWaitPage,
+    ResultWaitPage,
     Results
 ]
