@@ -15,7 +15,10 @@ class Introduction(Page):
 class trt1_1(Page):
     def vars_for_template(self):
         self.player.cur_trt = self.player.participant.vars['trts'][self.round_number-1]
-
+        if self.player.cur_trt < 5:
+            self.player.treatment_label = 'T3' + str(self.player.cur_trt)
+        else:
+            self.player.treatment_label = 'T4' + str(self.player.cur_trt - 4)
 
 class trt1_2(Page):
     form_model = models.Player

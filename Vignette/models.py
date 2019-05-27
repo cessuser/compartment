@@ -39,6 +39,7 @@ class Player(BasePlayer):
     dice = models.IntegerField(label="Please enter your dice value", widget=widgets.TextInput)
     real_die_value = models.IntegerField(min=1, max=6)
     cur_trt = models.IntegerField()
+    treatment_label = models.StringField()
 
 
     q1 = models.IntegerField(label='As a voter how would you evaluate Party Alpha, the Prime Minister’s Party, for an economy that performs above expectations? On the left is “very bad” and on the right is “very good”. ')
