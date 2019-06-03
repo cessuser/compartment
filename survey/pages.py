@@ -29,7 +29,7 @@ class Results(Page):
             self.player.link = '5;URL=https://cessonline.eu.qualtrics.com/jfe/form/SV_eYhSf4Ze2fVGE17?expost_uk=1&participant_label=' +\
                                str(self.player.participant.label)
         if self.session.config['Ireland']:
-            self.player.link = '5;URL= https://cessonline.eu.qualtrics.com/jfe/form/SV_eYhSf4Ze2fVGE17?expost_ireland=1&participant_label=' + str(self.player.participant.label)
+            self.player.link = '5;URL=https://cessonline.eu.qualtrics.com/jfe/form/SV_eYhSf4Ze2fVGE17?expost_ireland=1&participant_label=' + str(self.player.participant.label)
         return {
             'p1': p1,
             'p2': p2,
