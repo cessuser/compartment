@@ -46,7 +46,7 @@ class additionals(Page):
 
     def before_next_page(self):
         self.player.set_payoff()
-        self.player.participant.vars['vignette'] = self.player.payoff
+        self.player.participant.vars['x'] = self.player.payoff
 
 class trt1_3_1(Page):
     form_model = models.Player

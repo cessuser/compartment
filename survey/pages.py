@@ -18,7 +18,7 @@ class Results(Page):
         return self.player.participant.vars['consent']
 
     def vars_for_template(self):
-        p1 = self.player.participant.vars['n_correct1_M5'] * 150
+        p1 = self.player.participant.vars['n_correct1_M5'] * 100
         p2 = self.player.participant.vars['words_found'] * 100
         p3 = self.player.participant.vars['vignette']
         print(self.player.participant.vars['dice1'])
@@ -29,8 +29,7 @@ class Results(Page):
             self.player.link = '5;URL=https://cessonline.eu.qualtrics.com/jfe/form/SV_eYhSf4Ze2fVGE17?expost_uk=1&participant_label=' +\
                                str(self.player.participant.label)
         if self.session.config['Ireland']:
-            self.player.link = '5;URL= https://cessonline.eu.qualtrics.com/jfe/form/SV_eYhSf4Ze2fVGE17?expost_ireland=1&participant_label=' \
-                               + str(self.player.participant.label)
+            self.player.link = '5;URL= https://cessonline.eu.qualtrics.com/jfe/form/SV_eYhSf4Ze2fVGE17?expost_ireland=1&participant_label=' + str(self.player.participant.label)
         return {
             'p1': p1,
             'p2': p2,
