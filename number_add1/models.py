@@ -15,7 +15,7 @@ class Constants(BaseConstants):
     name_in_url = 'number_add1'
     players_per_group = None
     num_rounds = 30
-    prize = 150
+    prize = 100
 
     nums1 = [65, 16, 37, 59, 76, 48, 12, 60, 73, 96, 29, 89, 31, 29, 31, 95, 71, 46, 61, 20, 15, 37, 68, 67, 52, 91, 74,
              52, 47, 44]
