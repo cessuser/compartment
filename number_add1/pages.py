@@ -73,7 +73,9 @@ class Introduction0(Page):
     def vars_for_template(self):
         self.player.set_label()
         return {
-            'rate': int(1/self.session.config['real_world_currency_per_point'])
+            'rate': int(1/self.session.config['real_world_currency_per_point']),
+            'rate1': '1 ' + self.session.config['Currency']
+
         }
 
 class consent_form(Page):
@@ -88,6 +90,10 @@ class consent_form(Page):
             self.player.participant.vars['consent'] = False
             return upcoming_apps[-1]
 
+    def vars_for_template(self):
+        return{
+            'rate1': '1 ' + self.session.config['Currency']
+        }
     def before_next_page(self):
         self.player.participant.vars['consent'] = self.player.consent
 

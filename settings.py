@@ -18,6 +18,7 @@ SESSION_CONFIGS = [
         'real_world_currency_per_point': 0.001,
         'UK': True,
         'Ireland':False,
+        'Currency': '£',
         'app_sequence': ['number_add1', 'word_search', 'Vignette','survey'],
     },
     {
@@ -27,6 +28,7 @@ SESSION_CONFIGS = [
         'real_world_currency_per_point': 0.001,
         'UK': False,
         'Ireland': True,
+        'Currency': '€',
         'app_sequence': ['number_add1', 'word_search', 'Vignette','survey'],
     }
     # {
@@ -55,7 +57,7 @@ SESSION_CONFIGS = [
 LANGUAGE_CODE = 'en'
 
 # e.g. EUR, GBP, CNY, JPY
-REAL_WORLD_CURRENCY_CODE = 'GBP'
+REAL_WORLD_CURRENCY_CODE = 'EUR'
 POINTS_CUSTOM_NAME = 'ECUs'
 USE_POINTS = True
 
