@@ -7,41 +7,41 @@
 <div class="col-12 mb-3">
     <div class="card card-body bg-light">
         {% if player.cur_trt == 1 %}
-            The Government, consisting of Party Alpha, Beta, and Gamma, commits to one overarching goal that is promoting growth and creating jobs.  They jointly draft government tax and spending policies that they collectively agree to implement.  These government priorities of promoting growth and creating jobs are then announced to the public by the Prime Minister from Party Alpha.
+            De Regering, bestaande uit partij Alpha, Beta en Gamma, legt zich toe op een overkoepelend doel, namelijk het bevorderen van groei en het creëren van banen. Gezamenlijk schetsen zij een overheidsbelasting en uitgavebeleid, waarvan ze het erover eens zijn om het te implementeren. Deze regeringsprioriteiten, het bevorderen van groei en het creëren van banen, worden vervolgens bekend gemaakt aan het publiek door de Minister President van partij Alpha.
         {% elif player.cur_trt == 2 %}
-            The Finance Minister from Party Beta commits to one overarching goal that is promoting growth and creating jobs. The Finance Minister drafts government tax and spending policies to be implemented. These government priorities of promoting growth and creating jobs are then announced to the public by the Prime Minister from Party Alpha.
+            De Minister van Financiën van partij Beta legt zich toe op het overkoepelende doel van het bevorderen van groei en het creëren van banen. De Minister van Financiën schetst overheidsbelastingen en uitgavebeleid om te implementeren. Deze regeringsprioriteiten van het bevorderen van groei en het creëren van banen worde vervolgens bekend gemaakt aan het publiek door de Minister President van partij Alpha.
         {% elif player.cur_trt == 3 %}
-            The Government, consisting of Party Alpha, Beta, and Gamma, commits to one overarching goal that is promoting growth and creating jobs.  They jointly draft government tax and spending policies that they collectively agree to implement.  These government priorities of promoting growth and creating jobs are then announced to the public by the Finance Minister from Party Beta.
+            De regering, bestaande uit partij Alpha, Beta en Gamma, leggen zich toe op een overkoepelend doel, namelijk het bevorderen van groei en het creëren van banen. Gezamenlijk schetsen zij overheidsbelastingen en uitgavebeleid, waarvan ze het erover eens zijn om het te implementeren. Deze regeringsprioriteiten van het bevorderen van groei en het creëren van banen worden vervolgens bekend gemaakt aan het publiek door de Minister van Financiën van partij Beta.
         {% elif player.cur_trt == 4 %}
-            The Finance Minister from Party Beta commits to one overarching goal that is promoting growth and creating jobs. The Finance Minister drafts government tax and spending policies to be implemented. These government priorities of promoting growth and creating jobs are then announced to the public by the Finance Minister from Party Beta.
+            De Minister van Financiën van partij Beta legt zich toe op het overkoepelende doel van het bevorderen van groei en het creëren van banen. De Minister van Financiën schetst overheidsbelastingen en uitgavebeleid om te implementeren. Deze regeringsprioriteiten van het bevorderen van groei en het creëren van banen worde vervolgens bekend gemaakt aan het publiek door de Minister van Financiën van partij Beta.
         {% elif player.cur_trt == 5 %}
-            The Government, consisting of Party Alpha, Beta, and Gamma, commits to one overarching goal that is promoting growth and creating jobs.  They jointly draft government tax and spending policies that they collectively agree to implement.  These government priorities of promoting growth and creating jobs are then announced to the public by the Prime Minister from Party Alpha.
+            De regering, bestaande uit partij Alpha, Beta en Gamma, leggen zich toe op een overkoepelend doel, namelijk het bevorderen van groei en het creëren van banen. Gezamenlijk schetsen zij overheidsbelastingen en uitgavebeleid, waarvan ze het erover eens zijn om het te implementeren. Deze regeringsprioriteiten van het bevorderen van groei en het creëren van banen worden vervolgens bekend gemaakt aan het publiek door de Minister President van partij Alpha.
         {% elif player.cur_trt == 6 %}
-            The Finance Minister from Party Beta commits to one overarching goal that is promoting growth and creating jobs. The Finance Minister drafts government tax and spending policies to be implemented. These government priorities of promoting growth and creating jobs are then announced to the public by the Prime Minister from Party Alpha.
+            De Minister van Financiën van partij Beta legt zich toe op het overkoepelende doel van het bevorderen van groei en het creëren van banen. De Minister van Financiën schetst overheidsbelastingen en uitgavebeleid om te implementeren. Deze regeringsprioriteiten van het bevorderen van groei en het creëren van banen worde vervolgens bekend gemaakt aan het publiek door de Minister President van partij Alpha.
         {% elif player.cur_trt == 7 %}
-            The Government, consisting of Party Alpha, Beta, and Gamma, commits to one overarching goal that is promoting growth and creating jobs.  They jointly draft government tax and spending policies that they collectively agree to implement.  These government priorities of promoting growth and creating jobs are then announced to the public by the Finance Minister from Party Beta.
+            De regering, bestaande uit partij Alpha, Beta en Gamma, leggen zich toe op een overkoepelend doel, namelijk het bevorderen van groei en het creëren van banen. Gezamenlijk schetsen zij overheidsbelastingen en uitgavebeleid, waarvan ze het erover eens zijn om het te implementeren. Deze regeringsprioriteiten van het bevorderen van groei en het creëren van banen worden vervolgens bekend gemaakt aan het publiek door de Minister van Financiën van partij Beta.
         {% else %}
-            The Finance Minister from Party Beta commits to one overarching goal that is promoting growth and creating jobs. The Finance Minister drafts government tax and spending policies to be implemented. These government priorities of promoting growth and creating jobs are then announced to the public by the Finance Minister from Party Beta.
+            De Minister van Financiën van partij Beta legt zich toe op het overkoepelende doel van het bevorderen van groei en het creëren van banen. De Minister van Financiën schetst overheidsbelastingen en uitgavebeleid om te implementeren. Deze regeringsprioriteiten van het bevorderen van groei en het creëren van banen worde vervolgens bekend gemaakt aan het publiek door de Minister van Financiën van partij Beta.
         {% endif %}
     </div>
 </div>
     <div class="col-12 mb-3">
         {% if player.cur_trt < 5 %}
-            We are interested in how voters would react to this government when the economy performs above expectations – so when GDP growth is much higher than normal and unemployment rates drop to very low levels.
+            We willen graag weten hoe kiezers zouden reageren op deze regering wanneer de economie beter presteert dan verwacht – dus als de BBP [Bruto Binnenlands Product] een stuk hoger is dan het normaal is, en werkloosheid daalt tot een erg laag niveau.
         {% else %}
-            We are interested in how voters react when the economy performs below expectations – GDP growth is much lower than normal and unemployment rates rise to very high levels.
+            We willen graag weten hoe kiezers zouden reageren op deze regering wanneer de economie slechter presteert dan verwacht – dus als de BBP [Bruto Binnenlands Product] een stuk lager is dan het normaal is, en werkloosheid stijgt tot een erg hoog niveau.
         {% endif %}
     </div>
 <p>
     {% if player.cur_trt < 5 %}
         1. {{ form.q1.label }}
     {% else %}
-        1. As a voter how would you evaluate Party Alpha, the Prime Minister’s Party, for an economy that performs below expectations? On the left is “very bad” and on the right is “very good”.
+        1. Als kiezer, hoe zou u partij Alpha, van de Minister President, beoordelen, bij een economie die onder de verwachtingen presteert? Links is “erg slecht” en rechts is “erg goed”.
     {% endif %}
     <br>
     <!--very bad &nbsp;<input name = "q1", type="range" id="slider"> &nbsp;very good-->
 <div class="slidecontainer">
-    very bad <input type="range" min="1" max="100" value="50" name="q1" class="slider" id="id_q1">  very good
+    erg slecht <input type="range" min="1" max="100" value="50" name="q1" class="slider" id="id_q1">  erg goed
     <br><br>
 <p align="center">Value: <span id="q1_val"></span></p>
 </div>
@@ -49,7 +49,7 @@
     {% if player.cur_trt < 5 %}
         2. {{ form.q2.label }}
     {% else %}
-        2. As a voter how would you evaluate Party Beta, the Finance Minister’s Party, for an economy that performs below expectations? On the left is “very bad” and on the right is “very good”.
+        2. Als kiezer, hoe zou u partij Beta, van de Minister van Financiën, beoordelen, bij een economie die onder de verwachtingen presteert? Links is “erg slecht” en rechts is “erg goed”.
     {% endif %}
 <br><br>
 <div class="slidecontainer">
@@ -60,17 +60,18 @@
     {% if player.cur_trt < 5 %}
         3. {{ form.q3.label }}
     {% else %}
-        3. As a voter how would you evaluate Party Gamma, the Minister of Foreign Affair’s Party, for an economy that performs below expectations? On the left is “very bad” and on the right is “very good”.
+        3. Als kiezer, hoe zou u partij Gamma, van de Minister van Buitenlandse Zaken, beoordelen, bij een economie die onder de verwachtingen presteert? Links is “erg slecht” en rechts is “erg goed”.
     {% endif %}
 <br><br>
 <div class="slidecontainer">
-    very bad <input type="range" min="1" max="100" value="50" name="q3" class="slider" id="id_q3">  very good
+    erg slecht  <input type="range" min="1" max="100" value="50" name="q3" class="slider" id="id_q3">  erg goed
     <br><br>
-<p align="center">Value: <span id="q3_val"></span></p>
+<p align="center">Waarde: <span id="q3_val"></span></p>
 </div>
 <br>
 {% if player.cur_trt > 4 %}
-    {% formfield player.q4 label="4. Which of the three parties do you think is primarily responsible for the low GDP growth rates and higher unemployment levels?" %}
+    {% formfield player.q4 label="4. Welke van de drie partijen vindt u hoofdzakelijk verantwoordelijk voor de lage BBP groei en het hogere werkloosheidsniveau?
+" %}
 {% else %}
     {% formfield player.q4 %}
 {% endif %}

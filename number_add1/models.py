@@ -45,8 +45,8 @@ class Group(BaseGroup):
 
 class Player(BasePlayer):
     consent = models.BooleanField(widget=widgets.RadioSelect,
-                                 label='Do you agree the above content?',
-                                 choices=[(True, 'Yes'), (False, 'No')])
+                                 label='Bent u het eens met de bovenstaande informatie>',
+                                 choices=[(True, 'Ja'), (False, 'Nee')])
     label = models.StringField()
     url_assigned = models.StringField()
     answer = models.IntegerField() # player answer

@@ -2,16 +2,16 @@
 {% load otree static %}
 
 {% block title %}
-    Result
+Resultaat
 {% endblock %}
 
 {% block content %}
 <p>
-    Your payment in module 1: {{ p1 }} ECUs<br>
-    Your payment in module 2: {{ p2 }} ECUs<br>
-    Your payment in module 3: {{ p3 }}
+    Uw betaling in module 1: {{ p1 }} ECUs<br>
+    Uw betaling in module 2: {{ p2 }} ECUs<br>
+    Uw betaling in module 3:: {{ p3 }}
 </p>
-<p>You will be redirected to a short survey in 5 seconds.</p>
+<p>U wordt binnen 5 seconden doorgestuurd naar een korte enquête.</p>
 
 <meta http-equiv="refresh" content={{ player.link }}>
 

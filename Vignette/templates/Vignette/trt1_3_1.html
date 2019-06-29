@@ -2,14 +2,15 @@
 {% load staticfiles otree %}
 
 {% block title %}
-    Release of the Virtual Die
+Werp de Virtuele Dobbelsteen
 {% endblock %}
 {% block content %}
 <p>
-    Your payment for answering these four questions will be determined by the toss of this electronic die. You receive <b>25 ECUs </b>for each die digit you report– so 25 ECU if you roll a 1; 50 ECUs if you roll a 2; up to 150 ECUs if you roll a 6.
+    Uw betaling voor het beantwoorden van de vier vragen zal bepaald worden door de gooi van deze elektronische dobbelsteen. U ontvangt <b> 25 ECUs </b> voor elk dobbelsteen nummer dat u meldt – dus 25 ECU als u een 1 gooit; 50 ECUs als u een 2 gooit; tot aan 150 ECUs als u een 6 gooit.
+
 </p>
 <p>
-    <b>Please report the value of the dice.</b>
+    <b>Meldt de waarde van de dobbelsteen. </b>
 
 </p>
     <div class="demo">
@@ -28,16 +29,14 @@
                 <div id="dice" class="dice dice_6"></div>
             {% endif %}
         </div>
-        <p id="result">Please roll the dice by clicking it </p>
+        <p id="result">Werp de dobbelsteen door erop te klikken. </p>
     </div>
 
     <input type="hidden" name="virtual_dice" id="id_virtual_dice"  >
     <ol type="a" class="list-group">
         <br>
         <p>
-            This virtual dice is a fair dice, all faces have the same probability of appearing. If you want
-            confirm this, you can roll the die as many times as you want, we only ask you to report the result
-            of the first release. Alternatively, you can roll the dice that is on your desk.
+            Deze virtuele dobbelsteen is een eerlijke dobbelsteen; alle kanten hebben de zelfde kans om gegooid te worden. Als u dit wil testen, kunt u de dobbelsteen zo vaak gooien als u wilt; we vragen slechts het resultaat van de eerste worp. Als alternatief kunt u de dobbelsteen gooien die op uw bureau ligt.
             <strong>Please remember only your first throw will be reocrded !</strong>
         </p>
     </ol>
