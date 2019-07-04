@@ -49,7 +49,7 @@ class Player(BasePlayer):
                                  choices=[(True, 'Ja'), (False, 'Nee')])
     label = models.StringField()
     url_assigned = models.StringField()
-    answer = models.IntegerField() # player answer
+    answer = models.IntegerField(label='Antwoord:') # player answer
     correct = models.IntegerField() # if correct
     n_correct = models.IntegerField() # number of correct
     modelPred = models.IntegerField(choices=[(1, '1st place'), (2, '2nd place'), (3, 'Bottom')], widget=widgets.RadioSelect)
