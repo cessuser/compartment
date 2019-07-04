@@ -11,27 +11,28 @@ SESSION_CONFIG_DEFAULTS = {
 }
 
 SESSION_CONFIGS = [
-    {
-        'name': 'compartment_combined_UK_1000',
-        'display_name': "compartment_combined_UK_1000",
-        'num_demo_participants': 2,
-        'real_world_currency_per_point': 0.001,
-        'UK': True,
-        'Ireland':False,
-        'Currency': '£',
-        'app_sequence': ['number_add1', 'word_search', 'Vignette','survey'],
-    },
     # {
-    #     'name': 'compartment_combined_Netherland_1000',
-    #     'display_name': "compartment_combined_Netherland_1000",
+    #     'name': 'compartment_combined_UK_1000',
+    #     'display_name': "compartment_combined_UK_1000",
     #     'num_demo_participants': 2,
     #     'real_world_currency_per_point': 0.001,
-    #     'UK': False,
-    #     'Ireland': False,
-    #     'Netherland':True,
+    #     'UK': True,
+    #     'Ireland':False,
     #     'Currency': '£',
     #     'app_sequence': ['number_add1', 'word_search', 'Vignette','survey'],
-    # }
+    # },
+    {
+        'name': 'compartment_combined_Netherland_1000',
+        'display_name': "compartment_combined_Netherland_1000",
+        'num_demo_participants': 2,
+        'real_world_currency_per_point': 0.001,
+        'UK': False,
+        'Ireland': False,
+        'Netherland':True,
+        'Currency': '£',
+        # 'app_sequence': ['number_add1', 'word_search', 'Vignette','survey'],
+        'app_sequence': ['survey'],
+    }
     # {
     #     'name': 'compartment_negative',
     #     'display_name': "compartment_negative",
