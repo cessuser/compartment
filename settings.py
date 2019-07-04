@@ -29,7 +29,7 @@ SESSION_CONFIGS = [
         'UK': False,
         'Ireland': True,
         'Netherland':False,
-        'Currency': '£',
+        'Currency': 'eruo',
         'app_sequence': ['number_add1', 'word_search', 'Vignette','survey'],
         # 'app_sequence': ['survey'],
     }

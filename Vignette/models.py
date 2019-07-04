@@ -46,7 +46,7 @@ class Player(BasePlayer):
     q2 = models.IntegerField(label='Als kiezer, hoe zou u partij Beta, van de Minister van Financiën, beoordelen, bij een economie die onder de verwachtingen presteert? Links is “erg slecht” en rechts is “erg goed”.')
     q3 = models.IntegerField(label='Als kiezer, hoe zou u partij Gamma, van de Minister van Buitenlandse Zaken, beoordelen, bij een economie die onder de verwachtingen presteert? Links is “erg slecht” en rechts is “erg goed”.  ')
     q4 = models.StringField(choices=['Partij Alpha', 'Partij Beta', 'Partij Gamma'], widget=widgets.RadioSelect,
-                            label='4. Which of the three parties do you think is responsible for the high GDP growth rates and lower unemployment levels?')
+                            label='4. Welke van de drie partijen vindt u hoofdzakelijk verantwoordelijk voor de lage BBP groei en het hogere werkloosheidsniveau?')
     a1 = models.StringField(choices=['Partij Alpha', 'Partij Beta', 'Partij Gamma'],
                             label='Welke partij controleert de Eerste Minister?Pagina 100 ECU voor correct antwoord.', widget=widgets.RadioSelect)
     a2 = models.StringField(choices=['Partij Alpha', 'Partij Beta', 'Partij Gamma'],
