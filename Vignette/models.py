@@ -36,7 +36,7 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-    dice = models.IntegerField(label="Please enter your dice value", widget=widgets.TextInput)
+    dice = models.IntegerField(label="Voer uw dobbelwaarde in:", widget=widgets.TextInput)
     real_die_value = models.IntegerField(min=1, max=6)
     cur_trt = models.IntegerField()
     treatment_label = models.StringField()
@@ -48,11 +48,11 @@ class Player(BasePlayer):
     q4 = models.StringField(choices=['Party Alpha', 'Party Beta', 'Party Gamma'], widget=widgets.RadioSelect,
                             label='4. Which of the three parties do you think is responsible for the high GDP growth rates and lower unemployment levels?')
     a1 = models.StringField(choices=['Party Alpha', 'Party Beta', 'Party Gamma'],
-                            label='What party controls the Prime Ministership? Paid 100 ECUs for correct answer.', widget=widgets.RadioSelect)
+                            label='Welke partij controleert de Eerste Minister?Pagina 100 ECU voor correct antwoord.', widget=widgets.RadioSelect)
     a2 = models.StringField(choices=['Party Alpha', 'Party Beta', 'Party Gamma'],
-                            label='What party controls the Finance Ministry? Paid 100 ECUs for correct answer.', widget=widgets.RadioSelect)
+                            label='Welke partij controleert het ministerie van Financiën?Pagina 100 ECU voor correct antwoord.', widget=widgets.RadioSelect)
     a3 = models.StringField(choices=['Party Alpha', 'Party Beta', 'Party Gamma'],
-                            label='What party controls the Ministry of Foreign Affairs? Paid 100 ECUs for correct answer.', widget=widgets.RadioSelect)
+                            label='Welke partij controleert het ministerie van Buitenlandse Zaken?Pagina 100 ECU voor correct antwoord.', widget=widgets.RadioSelect)
 
     def set_payoff(self):
         self.payoff = Constants.dice_prize * sum(self.participant.vars['dice1'])

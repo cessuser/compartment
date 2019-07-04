@@ -48,6 +48,6 @@ class Thankyou(Page):
     #     return self.player.participant.vars['consent'] == False
 page_sequence = [
     # demographic,
-    # Results,
-    Thankyou
+    Results,
+    # Thankyou
 ]
