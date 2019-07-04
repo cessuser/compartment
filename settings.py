@@ -27,7 +27,7 @@ SESSION_CONFIGS = [
         'num_demo_participants': 2,
         'real_world_currency_per_point': 0.001,
         'UK': False,
-        'Ireland': False,
+        'Ireland': True,
         'Netherland':False,
         'Currency': '£',
         'app_sequence': ['number_add1', 'word_search', 'Vignette','survey'],
