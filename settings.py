@@ -30,8 +30,8 @@ SESSION_CONFIGS = [
         'Ireland': False,
         'Netherland':True,
         'Currency': '£',
-        # 'app_sequence': ['number_add1', 'word_search', 'Vignette','survey'],
-        'app_sequence': ['survey'],
+        'app_sequence': ['number_add1', 'word_search', 'Vignette','survey'],
+        # 'app_sequence': ['survey'],
     }
     # {
     #     'name': 'compartment_negative',
