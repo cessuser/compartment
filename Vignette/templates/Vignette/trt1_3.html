@@ -52,7 +52,7 @@ Gooi de Virtuele Dobbelsteen
                     dice.removeClass("dice_s").addClass("dice_e");
                 }).delay(100).animate({left: '-2px', top: '2px'}, 100, function () {
                     dice.removeClass("dice_e").addClass("dice_" + num);
-                    $("#result").html("The number is:<span>" + num + "</span>");
+                    $("#result").html("Het nummer is:<span>" + num + "</span>");
                     dice.css('cursor', 'pointer');
                     $("#dice_mask").remove();//remove mask
                 });
