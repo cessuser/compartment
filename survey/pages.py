@@ -30,8 +30,8 @@ class Results(Page):
                                str(self.player.participant.label)
         if self.session.config['Ireland']:
             self.player.link = '5;URL=https://cessonline.eu.qualtrics.com/jfe/form/SV_eYhSf4Ze2fVGE17?expost_ireland=1&participant_label=' + str(self.player.participant.label)
-        if self.session.config['Netherland']:
-            self.player.link = '5;URL=https://cessonline.eu.qualtrics.com/jfe/form/SV_6Pc732cIXCPJvvf?return_tic='+str(self.player.participant.label)
+        # if self.session.config['Netherland']:
+        #     self.player.link = '5;URL=https://cessonline.eu.qualtrics.com/jfe/form/SV_6Pc732cIXCPJvvf?return_tic='+str(self.player.participant.label)
         return {
             'p1': p1,
             'p2': p2,
@@ -40,14 +40,14 @@ class Results(Page):
 
 class demographic(Page):
     form_model = models.Player
-    form_fields = ['age', 'gender', 'gender_other', 'student', 'edu_level', 'major', 'major_other','math_course', 'econ_course']
+    form_fields = ['age', 'gender', 'edu_level', 'ethnicity','household_income', 'comments']
 
 class Thankyou(Page):
     pass
     # def is_displayed(self):
     #     return self.player.participant.vars['consent'] == False
 page_sequence = [
-    # demographic,
+    demographic,
     Results,
     # Thankyou
 ]

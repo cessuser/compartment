@@ -27,32 +27,35 @@ class Group(BaseGroup):
 
 class Player(BasePlayer):
     link = models.StringField()
-    age = models.IntegerField(min=18, max=100, label="1.What is your age?")
-    gender = models.StringField(choices=['Female', 'Male'], label="What is your gender?", widget=widgets.RadioSelect)
-    gender_other = models.StringField(label="other(Please specify) ", blank=True)
-    student = models.StringField(
-        choices=["Full time", "Part time (less than the normal full time course load)", "Non-student"],
-        label="3.What is your student status?")
+    age = models.IntegerField(min=18, max=100, label="leeftijd:")
+    gender = models.StringField(choices=['mannetje', 'vrouw', 'anders'], label="geslacht:", widget=widgets.RadioSelect)
     edu_level = models.StringField(
-        label="4.What is the highest level of study that you have completed? (Use your current year in school if you are a student.)",
-        choices=['High school or lower', 'Undergraduate 1st year', 'Undergraduate 2nd year',
-                 'Undergraduate 3rd year', 'Undergraduate 4th year', 'Graduate 1st year', 'Graduate 2nd year',
-                 'Graduate 3 or more years'], widget=widgets.RadioSelect)
-    major = models.StringField(
-        label="5.Which of the following best describes your current major course of study? (Check more than one option if you are a double major or if your undergraduate and graduate majors differ. For non-students, use the major for the highest year of school completed.)",
-        choices=['No Major or Pre-College',
-                 'Arts/Humanities/Education',
-                 'Business/Management (including MBA)',
-                 'Economics',
-                 'Politics',
-                 'Psychology',
-                 'Other Social Sciences',
-                 'Law School (but not pre-law)',
-                 'Medical/Nursing (but not pre-med)',
-                 'Math/Engineering/Computer Science/Science'],
+        label="Selecteer uw hoogst genoten vorm van onderwijs van de onderstaande categorieën",
+              choices=['Geen formeel onderwijs',
+                       'Basisschool',
+                       'Vmbo',
+                       'Havo',
+                       'Vwo',
+                       'Mbo',
+                       'Hogeschool bachelor',
+                       'Universiteit bachelor',
+                       'Hogeschool master',
+                       'Universiteit master','PhD'], widget=widgets.RadioSelect)
+    ethnicity = models.StringField(
+        label="Kies een of meer etnische achtergronden waar u uzelf bij vindt horen:",
+        choices=['Blank','Gemengd/meerdere Etnische groepen','Turks (Turkish)','Marokkaans  (Moroccan)','Nederlandsche Antillen (Dutch Antilles)','Anders (Other)'],
         widget=widgets.RadioSelect)
-    major_other = models.StringField(label="other(Please specify)", blank=True)
-    math_course = models.IntegerField(label="6.How many college-level mathematics courses have you taken")
-    econ_course = models.IntegerField(label="7.How many college-level economics courses have you taken?")
-
+    household_income = models.StringField(
+        label='Wat is het totale inkomen van uw huishouden per jaar?',
+        choices=['Minder dan 10.000 Euro',
+                 '10.000 tot 20.000 Euro',
+                 '20.000 tot 30.000 Euro',
+                 '30.000 tot 40.000 Euro',
+                 '40.000 tot 50.000 Euro',
+                 '100.000 tot 200.000 Euro',
+                 '200.000 Euro of meer',
+                 'Zeg ik liever niet'],
+        widget=widgets.RadioSelect
+    )
+    comments = models.StringField(label='opmerkingen?')
     final_payoff = models.FloatField(min=0)
