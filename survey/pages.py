@@ -42,6 +42,10 @@ class demographic(Page):
     form_model = models.Player
     form_fields = ['age', 'gender', 'edu_level', 'ethnicity','household_income', 'comments']
 
+    def is_displayed(self):
+        return self.player.participant.vars['consent']
+
+
 class Thankyou(Page):
     def is_displayed(self):
         return self.player.participant.vars['consent'] == False
