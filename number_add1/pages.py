@@ -19,6 +19,7 @@ class TaskPage(Page):
     form_fields = ['answer']
     form_model = models.Player
     timeout_seconds = 60
+    timer_text = 'Tijd om te voltooien:'
 
     def is_displayed(self):
         if self.round_number == 1:
