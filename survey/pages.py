@@ -43,11 +43,11 @@ class demographic(Page):
     form_fields = ['age', 'gender', 'edu_level', 'ethnicity','household_income', 'comments']
 
 class Thankyou(Page):
-    pass
-    # def is_displayed(self):
-    #     return self.player.participant.vars['consent'] == False
+    def is_displayed(self):
+        return self.player.participant.vars['consent'] == False
+
 page_sequence = [
     demographic,
     Results,
-    # Thankyou
+    Thankyou
 ]
