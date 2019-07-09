@@ -40,11 +40,17 @@ class Results(Page):
 
 class demographic(Page):
     form_model = models.Player
-    form_fields = ['age', 'gender', 'edu_level', 'ethnicity','household_income', 'comments']
+    form_fields = ['age', 'gender', 'edu_level', 'ethnicity','household_income']
 
     def is_displayed(self):
         return self.player.participant.vars['consent']
 
+class Comments(Page):
+    form_model = models.Player
+    form_fields = ['comments']
+
+    def is_displayed(self):
+        return self.player.participant.vars['consent']
 
 class Thankyou(Page):
     def is_displayed(self):
@@ -52,6 +58,7 @@ class Thankyou(Page):
 
 page_sequence = [
     demographic,
+    Comments,
     Results,
     Thankyou
 ]
