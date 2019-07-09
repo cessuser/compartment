@@ -66,13 +66,13 @@ USE_POINTS = True
 
 ROOMS = [
     {
-        'name': 'test_UK_label',
-        'display_name': 'test_UK_label',
+        'name': 'Netherland_label',
+        'display_name': 'Netherland_label',
         'participant_label_file': '_rooms/test_UK.txt',
     },
     {
-        'name': 'test_UK',
-        'display_name': 'test_UK',
+        'name': 'Netherland',
+        'display_name': 'Netherland',
     },
 ]
 
