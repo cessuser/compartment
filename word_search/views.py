@@ -10,6 +10,7 @@ class Introduction(Page):
 
 class WordPuzzle(Page):
     timeout_seconds = Constants.word_puzzle_seconds
+    timer_text = 'Tijd om te voltooien:'
 
 
 class WordsFound(Page):
