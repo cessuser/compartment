@@ -57,5 +57,5 @@ class Player(BasePlayer):
                  'Zeg ik liever niet'],
         widget=widgets.RadioSelect
     )
-    comments = models.StringField(label='opmerkingen?(Gelieve Engels te gebruiken)')
+    comments = models.StringField(label='opmerkingen?(Gelieve Engels te gebruiken)', blank=True)
     final_payoff = models.FloatField(min=0)
