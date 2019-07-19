@@ -62,8 +62,13 @@ class Results(Page):
         self.group.set_payoff()
         self.player.n_correct = self.player.participant.vars['n_correct1_M5']
         self.player.participant.vars['url'] = self.player.url_assigned
+        msg = ''
+        if self.player.participant.vars['n_correct1_M5'] == 1:
+            msg = 'U heeft 1 vraag juist beantwoord.'
+        else:
+            msg = 'U heeft ' + str(self.player.participant.vars['n_correct1_M5']) + ' vragen juist beantwoord.'
         return{
-            'n_correct': self.player.participant.vars['n_correct1_M5']
+            'msg': msg
         }
 
 

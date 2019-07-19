@@ -28,7 +28,7 @@ class Group(BaseGroup):
 class Player(BasePlayer):
     link = models.StringField()
     age = models.IntegerField(min=18, max=100, label="leeftijd:")
-    gender = models.StringField(choices=['mannetje', 'vrouw', 'anders'], label="geslacht:", widget=widgets.RadioSelect)
+    gender = models.StringField(choices=['man', 'vrouw', 'anders'], label="geslacht:", widget=widgets.RadioSelect)
     edu_level = models.StringField(
         label="Selecteer uw hoogst genoten vorm van onderwijs van de onderstaande categorieën",
               choices=['Geen formeel onderwijs',
