@@ -58,7 +58,6 @@ class Thankyou(Page):
 
 page_sequence = [
     demographic,
-    Comments,
     Results,
     Thankyou
 ]
