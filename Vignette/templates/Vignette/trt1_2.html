@@ -36,7 +36,7 @@
     {% if player.cur_trt < 5 %}
         1. {{ form.q1.label }}
     {% else %}
-        1. Als kiezer, hoe zou u partij Alpha, van de Minister President, beoordelen, bij een economie die boven de verwachtingen presteert? Links is “erg slecht” en rechts is “erg goed”.
+        1.  Als kiezer, hoe zou u partij Alpha, van de Minister President, beoordelen, bij een economie die onder de verwachtingen presteert? Links is “erg slecht” en rechts is “erg goed”.
     {% endif %}
     <br>
     <!--very bad &nbsp;<input name = "q1", type="range" id="slider"> &nbsp;very good-->
@@ -49,7 +49,7 @@
     {% if player.cur_trt < 5 %}
         2. {{ form.q2.label }}
     {% else %}
-        2. Als kiezer, hoe zou u partij Beta, van de Minister van Financiën, beoordelen, bij een economie die boven de verwachtingen presteert? Links is “erg slecht” en rechts is “erg goed”.
+        2.Als kiezer, hoe zou u partij Beta, van de Minister van Financiën, beoordelen, bij een economie die onder de verwachtingen presteert? Links is “erg slecht” en rechts is “erg goed”.
     {% endif %}
 <br><br>
 <div class="slidecontainer">
@@ -60,7 +60,7 @@
     {% if player.cur_trt < 5 %}
         3. {{ form.q3.label }}
     {% else %}
-        3. Als kiezer, hoe zou u partij Gamma, van de Minister van Buitenlandse Zaken, beoordelen, bij een economie die boven de verwachtingen presteert? Links is “erg slecht” en rechts is “erg goed”.
+        3. Als kiezer, hoe zou u partij Gamma, van de Minister van Buitenlandse Zaken, beoordelen, bij een economie die onder de verwachtingen presteert? Links is “erg slecht” en rechts is “erg goed”.
     {% endif %}
 <br><br>
 <div class="slidecontainer">
@@ -70,7 +70,8 @@
 </div>
 <br>
 {% if player.cur_trt > 4 %}
-    {% formfield player.q4 label="4. Welke van de drie partijen vindt u hoofdzakelijk verantwoordelijk voor de lage BBP groei en het hogere werkloosheidsniveau?" %}
+    {% formfield player.q4 label="4.Welke van de drie partijen vindt u hoofdzakelijk verantwoordelijk voor de lage BBP groei en het hogere werkloosheidsniveau?
+" %}
 {% else %}
     {% formfield player.q4 %}
 {% endif %}

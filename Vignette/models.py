@@ -42,17 +42,17 @@ class Player(BasePlayer):
     treatment_label = models.StringField()
 
 
-    q1 = models.IntegerField(label=' Als kiezer, hoe zou u partij Alpha, van de Minister President, beoordelen, bij een economie die onder de verwachtingen presteert? Links is “erg slecht” en rechts is “erg goed”. ')
-    q2 = models.IntegerField(label='Als kiezer, hoe zou u partij Beta, van de Minister van Financiën, beoordelen, bij een economie die onder de verwachtingen presteert? Links is “erg slecht” en rechts is “erg goed”.')
-    q3 = models.IntegerField(label='Als kiezer, hoe zou u partij Gamma, van de Minister van Buitenlandse Zaken, beoordelen, bij een economie die onder de verwachtingen presteert? Links is “erg slecht” en rechts is “erg goed”.  ')
+    q1 = models.IntegerField(label='Als kiezer, hoe zou u partij Alpha, van de Minister President, beoordelen, bij een economie die boven de verwachtingen presteert? Links is “erg slecht” en rechts is “erg goed”.')
+    q2 = models.IntegerField(label=' Als kiezer, hoe zou u partij Beta, van de Minister van Financiën, beoordelen, bij een economie die boven de verwachtingen presteert? Links is “erg slecht” en rechts is “erg goed”.')
+    q3 = models.IntegerField(label='Als kiezer, hoe zou u partij Gamma, van de Minister van Buitenlandse Zaken, beoordelen, bij een economie die boven de verwachtingen presteert? Links is “erg slecht” en rechts is “erg goed”.')
     q4 = models.StringField(choices=['Partij Alpha', 'Partij Beta', 'Partij Gamma'], widget=widgets.RadioSelect,
-                            label='4. Welke van de drie partijen vindt u hoofdzakelijk verantwoordelijk voor de lage BBP groei en het hogere werkloosheidsniveau?')
+                            label='4.Welke van de drie partijen vindt u hoofdzakelijk verantwoordelijk voor de hoge BBP groei en het lagere werkloosheidsniveau?')
     a1 = models.StringField(choices=['Partij Alpha', 'Partij Beta', 'Partij Gamma'],
-                            label='Welke partij controleert de Eerste Minister?Pagina 100 ECU voor correct antwoord.', widget=widgets.RadioSelect)
+                            label='Tot welke partij behoort de Minister President? U verdient 100 ECUs voor het correcte antwoord.', widget=widgets.RadioSelect)
     a2 = models.StringField(choices=['Partij Alpha', 'Partij Beta', 'Partij Gamma'],
-                            label='Welke partij controleert het ministerie van Financiën?Pagina 100 ECU voor correct antwoord.', widget=widgets.RadioSelect)
+                            label='Tot welke partij behoort de Minister van Financiën? U verdient 100 ECUs voor het correcte antwoord. ', widget=widgets.RadioSelect)
     a3 = models.StringField(choices=['Partij Alpha', 'Partij Beta', 'Partij Gamma'],
-                            label='Welke partij controleert het ministerie van Buitenlandse Zaken?Pagina 100 ECU voor correct antwoord.', widget=widgets.RadioSelect)
+                            label='Tot welke partij behoort de Minister van Buitenlandse Zaken? U verdient 100 ECUs voor het correcte antwoord.', widget=widgets.RadioSelect)
 
     def set_payoff(self):
         self.payoff = Constants.dice_prize * sum(self.participant.vars['dice1'])
