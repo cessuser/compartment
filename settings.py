@@ -28,7 +28,7 @@ SESSION_CONFIGS = [
         'real_world_currency_per_point': 0.001,
         'UK': False,
         'Ireland': False,
-        'Netherland':False,
+        'Netherland':True,
         'Currency': 'eruo',
         'app_sequence': ['number_add1', 'word_search', 'Vignette','survey'],
         # 'app_sequence': ['survey'],
