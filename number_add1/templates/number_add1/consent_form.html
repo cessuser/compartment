@@ -24,15 +24,8 @@ Als u vragen heeft over dit onderzoek, neem dan contact op met cess-online@nuffi
 <p>
     Ik heb de informatie hierboven gelezen. Door hieronder mijn handtekening te zetten, geef ik toestemming om mee te doen aan dit survey project.
 </p>
+{% formfields %}
 <br>
-<input type="hidden" name="url_assigned" id="id_url_assigned" />
-<script>
-    $( document ).ready(function() {
-        var string = document.referrer;
-        alert(string);
-        <!--$("#id_url_assigned").val(string);-->
-    });
-</script>
 {% next_button %}
 
 {% endblock%}
