@@ -3,7 +3,6 @@ from . import models
 from ._builtin import Page, WaitPage
 from .models import Constants
 import time
-import urllib.parse as urlparse
 
 class Introduction(Page):
     form_model = models.Player
@@ -80,7 +79,7 @@ class Introduction0(Page):
         }
 
 class consent_form(Page):
-    form_fields = ['consent', 'url_assigned']
+    form_fields = ['consent']
     form_model = models.Player
 
     def is_displayed(self):

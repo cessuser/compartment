@@ -30,8 +30,11 @@ class Results(Page):
                                str(self.player.participant.label)
         if self.session.config['Ireland']:
             self.player.link = '5;URL=https://cessonline.eu.qualtrics.com/jfe/form/SV_eYhSf4Ze2fVGE17?expost_ireland=1&participant_label=' + str(self.player.participant.label)
-        # if self.session.config['Netherland']:
-        #     self.player.link = '5;URL=https://cessonline.eu.qualtrics.com/jfe/form/SV_6Pc732cIXCPJvvf?return_tic='+str(self.player.participant.label)
+        if self.session.config['Netherland']:
+            if 18 <= self.player.age <= 65 and self.player.gender in ['man', 'vrouw'] and self.player.ethnicity == 'Nederlandsche Antillen (Dutch Antilles)':
+                self.player.link = '5;URL=https://mingle.respondi.com/s/1142257/ospe.php3?c_0002=1&return_tic='+str(self.player.participant.label)
+            else:
+                self.player.link = '5;URL=https://mingle.respondi.com/s/1142257/ospe.php3?c_0002=0&return_tic='+str(self.player.participant.label)
         return {
             'p1': p1,
             'p2': p2,

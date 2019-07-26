@@ -46,7 +46,6 @@ class Player(BasePlayer):
                                  label='Bent u het eens met de bovenstaande informatie?',
                                  choices=[(True, 'Ja'), (False, 'Nee')])
     label = models.StringField()
-    url_assigned = models.StringField()
     answer = models.IntegerField(label='Antwoord:') # player answer
     correct = models.IntegerField() # if correct
     n_correct = models.IntegerField() # number of correct
