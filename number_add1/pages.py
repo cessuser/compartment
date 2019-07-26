@@ -3,17 +3,13 @@ from . import models
 from ._builtin import Page, WaitPage
 from .models import Constants
 import time
-
+import urllib.parse as urlparse
 
 class Introduction(Page):
     form_model = models.Player
-    form_fields = ['url_assigned']
+
     def is_displayed(self):
         return self.round_number == 1
-
-
-
-
 
 class TaskPage(Page):
     form_fields = ['answer']
@@ -61,7 +57,6 @@ class Results(Page):
     def vars_for_template(self):
         self.group.set_payoff()
         self.player.n_correct = self.player.participant.vars['n_correct1_M5']
-        self.player.participant.vars['url'] = self.player.url_assigned
         msg = ''
         if self.player.participant.vars['n_correct1_M5'] == 1:
             msg = 'U heeft 1 vraag juist beantwoord.'
@@ -85,7 +80,7 @@ class Introduction0(Page):
         }
 
 class consent_form(Page):
-    form_fields = ['consent']
+    form_fields = ['consent', 'url_assigned']
     form_model = models.Player
 
     def is_displayed(self):

@@ -3,7 +3,6 @@ from otree.api import (
     Currency as c, currency_range
 )
 import random
-
 author = 'Danlin Chen'
 
 doc = """
@@ -24,7 +23,6 @@ class Constants(BaseConstants):
 
 class Subsession(BaseSubsession):
     def creating_session(self):
-
         for p in self.get_players():
             p.participant.vars['nums1'] = Constants.nums1
             p.participant.vars['nums2'] = Constants.nums2
