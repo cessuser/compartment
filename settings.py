@@ -31,7 +31,6 @@ SESSION_CONFIGS = [
         'Netherland':True,
         'Currency': 'eruo',
         'app_sequence': ['number_add1', 'word_search', 'Vignette','survey'],
-        # 'app_sequence': ['survey'],
     }
     # {
     #     'name': 'compartment_negative',
